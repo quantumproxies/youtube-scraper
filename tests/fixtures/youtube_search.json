@@ -1,0 +1,61 @@
+{
+ "run_id": "cmvk5nupp0aa141o5a4h2xkgv",
+ "slug": "youtube_search",
+ "version": "1.1.1",
+ "status": "done",
+ "input": {
+  "query": "python tutorial",
+  "country": "us",
+  "max_results": 3
+ },
+ "count": 3,
+ "partial": false,
+ "finished_at": "2026-10-22T23:11:40.373Z",
+ "results": [
+  {
+   "url": "https://www.youtube.com/watch?v=_uQrJ0TkZlc",
+   "live": false,
+   "rank": 2,
+   "title": "Python Full Course for Beginners",
+   "views": "49,412,017 views",
+   "badges": [
+    "CC"
+   ],
+   "channel": "Programming with Mosh",
+   "duration": "6:14:07",
+   "video_id": "_uQrJ0TkZlc",
+   "published": "7y ago",
+   "thumbnail": "https://i.ytimg.com/vi/_uQrJ0TkZlc/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA9oKvpSRnVyO4qbY3eQJe_4mWM2w",
+   "channel_id": "UCWv7vMbMWH4-V0ZXdmDpPBA",
+   "channel_url": "https://www.youtube.com/@programmingwithmosh",
+   "description": "Learn Python for AI, machine learning, and web development with this beginner-friendly course! Get 6 months of PyCharm ...",
+   "views_short": "49M",
+   "views_value": 49412017,
+   "channel_verified": true,
+   "duration_seconds": 22447
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+   "live": false,
+   "rank": 3,
+   "title": "Learn Python - Full Course for Beginners [Tutorial]",
+   "views": "49,487,839 views",
+   "badges": [
+    "CC"
+   ],
+   "channel": "freeCodeCamp.org",
+   "duration": "4:26:52",
+   "video_id": "rfscVS0vtbw",
+   "published": "8y ago",
+   "thumbnail": "https://i.ytimg.com/vi/rfscVS0vtbw/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCb9WATZJ6bcRmK_rn4cm_PUotjJA",
+   "channel_id": "UC8butISFwT-Wl7EV0hUK0BQ",
+   "channel_url": "https://www.youtube.com/@freecodecamp",
+   "description": "This course will give you a full introduction into all of the core concepts in python. Follow along with the videos and you'll be a ...",
+   "views_short": "49M",
+   "views_value": 49487839,
+   "channel_verified": true,
+   "duration_seconds": 16012
+  }
+ ],
+ "_note": "Real run of 2026-10-22; two of the three videos are kept here."
+}

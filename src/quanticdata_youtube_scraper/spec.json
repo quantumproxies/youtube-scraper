@@ -1,0 +1,184 @@
+{
+ "cli": "youtube-scraper",
+ "name": "YouTube Scraper",
+ "version": "0.1.0",
+ "description": "YouTube scraper for Python and the command line: search results, a channel's uploads with its stats, and full video metadata with exact views and likes, as JSON or CSV. Free and open source; sign in with your QuanticData account, no YouTube Data API key, proxies or headless browser to run.",
+ "links": {
+  "repo": "https://github.com/quantumproxies/youtube-scraper",
+  "page": "https://quanticdata.io/collectors/youtube-scraper-api/?utm_source=github&utm_medium=cli&utm_campaign=youtube-scraper",
+  "billing": "https://app.quanticdata.io/billing?utm_source=github&utm_medium=cli&utm_campaign=youtube-scraper",
+  "pricing": "https://quanticdata.io/pricing/?utm_source=github&utm_medium=cli&utm_campaign=youtube-scraper"
+ },
+ "commands": [
+  {
+   "name": "search",
+   "collector": "youtube_search",
+   "method": "search",
+   "help": "YouTube search results for a query",
+   "description": "YouTube search results without the Data API — views, channel, duration.",
+   "positional": "query",
+   "positional_is_list": false,
+   "positional_optional": false,
+   "columns": [
+    "rank",
+    "title",
+    "channel",
+    "views_value",
+    "duration",
+    "published"
+   ],
+   "sample": "youtube_search",
+   "inputs": [
+    {
+     "name": "query",
+     "type": "string",
+     "required": true,
+     "description": "What to search on YouTube.",
+     "arg": "query"
+    },
+    {
+     "name": "sort",
+     "type": "string",
+     "required": false,
+     "description": "Result order.",
+     "enum": [
+      "relevance",
+      "upload_date",
+      "view_count",
+      "rating"
+     ],
+     "default": "relevance",
+     "arg": "sort"
+    },
+    {
+     "name": "country",
+     "type": "string",
+     "required": false,
+     "description": "Country to run the request from, as an ISO 3166-1 alpha-2 code (us, gb, de...).",
+     "arg": "country"
+    },
+    {
+     "name": "lang",
+     "type": "string",
+     "required": false,
+     "description": "Interface language (hl), e.g. en, it, de.",
+     "arg": "lang"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many videos to deliver at most (1–100). You pay only for delivered videos.",
+     "min": 1,
+     "max": 100,
+     "default": 20,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "channel",
+   "collector": "youtube_channel",
+   "method": "channel",
+   "help": "a channel's videos, shorts or streams with channel stats",
+   "description": "A channel's uploads with views, duration and channel stats.",
+   "positional": "channel",
+   "positional_is_list": false,
+   "positional_optional": false,
+   "columns": [
+    "rank",
+    "video_id",
+    "title",
+    "views_value",
+    "duration",
+    "published_label"
+   ],
+   "sample": "youtube_channel",
+   "inputs": [
+    {
+     "name": "channel",
+     "type": "string",
+     "required": true,
+     "description": "Handle (@NASA), channel id (UC…) or channel URL.",
+     "arg": "channel"
+    },
+    {
+     "name": "tab",
+     "type": "string",
+     "required": false,
+     "description": "Which uploads tab to read.",
+     "enum": [
+      "videos",
+      "shorts",
+      "streams"
+     ],
+     "default": "videos",
+     "arg": "tab"
+    },
+    {
+     "name": "country",
+     "type": "string",
+     "required": false,
+     "description": "Country to run the request from, as an ISO 3166-1 alpha-2 code (us, gb, de...).",
+     "arg": "country"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many videos to deliver at most (1–150). You pay only for delivered videos.",
+     "min": 1,
+     "max": 150,
+     "default": 30,
+     "arg": "max_results"
+    }
+   ]
+  },
+  {
+   "name": "videos",
+   "collector": "youtube_video",
+   "method": "videos",
+   "help": "full metadata for one or more videos",
+   "description": "Full metadata per video id — exact views and likes, length, category, captions.",
+   "positional": "videos",
+   "positional_is_list": true,
+   "positional_optional": false,
+   "columns": [
+    "video_id",
+    "title",
+    "views",
+    "likes",
+    "length_seconds",
+    "publish_date",
+    "category"
+   ],
+   "sample": "youtube_video",
+   "inputs": [
+    {
+     "name": "videos",
+     "type": "string[]",
+     "required": true,
+     "description": "Video ids or watch/shorts/youtu.be URLs.",
+     "arg": "videos"
+    },
+    {
+     "name": "country",
+     "type": "string",
+     "required": false,
+     "description": "Country to run the request from, as an ISO 3166-1 alpha-2 code (us, gb, de...).",
+     "arg": "country"
+    },
+    {
+     "name": "max_results",
+     "type": "integer",
+     "required": false,
+     "description": "How many videos to deliver at most (1–20). You pay only for delivered videos.",
+     "min": 1,
+     "max": 20,
+     "default": 5,
+     "arg": "max_results"
+    }
+   ]
+  }
+ ]
+}

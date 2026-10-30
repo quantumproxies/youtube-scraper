@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quanticdata-youtube-scraper"
+version = "0.1.0"
+description = "YouTube scraper for Python and the command line: search results, a channel's uploads with its stats, and full video metadata with exact views and likes, as JSON or CSV. Free and open source; sign in with your QuanticData account, no YouTube Data API key, proxies or headless browser to run."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "QuanticData", email = "hello@quanticdata.io" }]
+keywords = ["youtube-scraper", "youtube", "youtube-api", "youtube-data-api", "youtube-search", "youtube-channel", "youtube-video", "youtube-analytics", "video-metadata", "web-scraping", "scraper", "python"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+pandas = ["pandas>=1.3"]
+
+[project.scripts]
+youtube-scraper = "quanticdata_youtube_scraper.__main__:run"
+
+[project.urls]
+Homepage = "https://quanticdata.io/collectors/youtube-scraper-api/?utm_source=github&utm_medium=pypi&utm_campaign=youtube-scraper"
+Documentation = "https://quanticdata.io/docs/"
+Source = "https://github.com/quantumproxies/youtube-scraper"
+Issues = "https://github.com/quantumproxies/youtube-scraper/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"quanticdata_youtube_scraper" = ["spec.json", "py.typed"]
